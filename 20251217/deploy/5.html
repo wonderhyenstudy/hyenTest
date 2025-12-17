@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 갤러리 레이아웃</title>
+    <style>
+        /* [1. 초기화 및 기본 스타일] */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: '맑은 고딕', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* 화면 전체 높이 사용 */
+        }
+
+        /* [2. 헤더 영역] - 상단 고정 */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            height: 60px;
+            display: flex;
+            align-items: center; /* 세로 중앙 정렬 */
+            padding-left: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* [3. 컨텐츠 래퍼] - 사이드바와 메인을 감싸는 틀 */
+        .container {
+            display: flex; /* 좌우 배치를 위한 Flex */
+            flex: 1; /* 남은 높이 모두 차지 */
+        }
+
+        /* [4. 사이드바 영역] - 좌측 메뉴 */
+        aside {
+            background-color: #f0f0f0;
+            width: 200px; /* PC에서는 200px 고정 */
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        aside ul {
+            list-style: none;
+        }
+
+        aside li {
+            margin-bottom: 15px;
+        }
+
+        aside a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        aside a:hover {
+            background-color: #ddd;
+        }
+
+        /* [5. 메인 본문 영역] - 사진첩 */
+        main {
+            flex: 1; /* 나머지 너비 모두 차지 */
+            padding: 20px;
+            background-color: white;
+        }
+
+        /* ★ 핵심: Flex를 이용한 사진첩 그리드 ★ */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap; /* 공간이 부족하면 줄바꿈 */
+            gap: 20px; /* 아이템 사이 간격 */
+        }
+
+        /* 사진 카드 스타일 */
+        .card {
+            /* flex-grow: 1, flex-shrink: 1, flex-basis: 250px */
+            /* 최소 250px 너비를 가지되, 공간이 남으면 늘어남 */
+            flex: 1 1 250px; 
+            
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* 비율 유지하며 꽉 채우기 */
+            display: block;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* [6. 반응형 미디어 쿼리] - 모바일 화면 (768px 이하) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* 좌우 배치 -> 상하 배치로 변경 */
+            }
+
+            aside {
+                width: 100%; /* 너비를 꽉 채움 */
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+                display: flex; /* 메뉴 가로로 나열 (선택사항) */
+                overflow-x: auto; /* 메뉴 많으면 스크롤 */
+                white-space: nowrap;
+                padding: 10px;
+            }
+            
+            aside ul {
+                display: flex;
+                gap: 10px;
+            }
+
+            aside li {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        My Photo Gallery
+    </header>
+
+    <div class="container">
+        
+        <aside>
+            <ul>
+                <li><a href="#">전체 보기</a></li>
+                <li><a href="#">여행</a></li>
+                <li><a href="#">음식</a></li>
+                <li><a href="#">풍경</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <h2>최신 사진</h2>
+            <br>
+            <div class="gallery">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200/FFB6C1/333" alt="사진1">
+                    <div class="card-body"><div class="card-title">벚꽃 여행</div>여행 기록</div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200/87CEEB/333" alt="사진2">
+                    <div class="card-body"><div class="card-title">여름 바다</div>해변가 산책</div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200/90EE90/333" alt="사진3">
+                    <div class="card-body"><div class="card-title">숲속 캠핑</div>힐링 타임</div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200/FFD700/333" alt="사진4">
+                    <div class="card-body"><div class="card-title">가을 단풍</div>산행 일지</div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200/D3D3D3/333" alt="사진5">
+                    <div class="card-body"><div class="card-title">겨울 눈사람</div>동심으로</div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200/FFA07A/333" alt="사진6">
+                    <div class="card-body"><div class="card-title">노을 맛집</div>저녁 식사</div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>
