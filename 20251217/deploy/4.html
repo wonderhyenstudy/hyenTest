@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제 이름은 김코딩입니다</title>
+    <style>
+        /* [CSS 디자인 영역] - 옷을 입히는 곳 */
+        body {
+            font-family: 'Pretendard', '맑은 고딕', sans-serif;
+            background-color: #f4f4f9; /* 배경색 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        /* 명함 같은 하얀 박스 */
+        .card {
+            background-color: white;
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* 그림자 효과 */
+            text-align: center;
+        }
+
+        /* 프로필 사진 (임시 이미지) */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* 원형 만들기 */
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #e0e0e0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        p.job-title {
+            color: #666;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        p.description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            word-break: keep-all; /* 한글 단어 끊김 방지 */
+        }
+
+        /* 소셜 링크 버튼들 */
+        .links a {
+            text-decoration: none;
+            color: white;
+            background-color: #4a90e2; /* 파란색 버튼 */
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin: 5px;
+            display: inline-block;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .links a:hover {
+            background-color: #357abd; /* 마우스 올렸을 때 색상 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="https://via.placeholder.com/150" alt="프로필 사진" class="profile-img">
+        
+        <h1>김코딩</h1>
+        <p class="job-title">웹 개발자 꿈나무 🌱</p>
+        
+        <p class="description">
+            안녕하세요! 배움의 즐거움을 아는 개발자 김코딩입니다.<br>
+            HTML과 CSS를 공부하며 나만의 웹사이트를<br>
+            만들어 나가고 있습니다.
+        </p>
+
+        <div class="links">
+            <a href="#">블로그</a>
+            <a href="mailto:email@example.com">이메일 보내기</a>
+        </div>
+    </div>
+
+</body>
+</html>
