@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>황혜은 자기소개</title>
+    <style>
+        :root {
+            --nature-green: #2d5a27; /* 짙은 숲색 */
+            --soft-sage: #e8f5e9; /* 연한 잎사귀색 배경 */
+            --accent-earth: #8d6e63; /* 흙을 연상시키는 갈색 */
+        }
+
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            background-color: var(--soft-sage);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* 헤더: 황혜은 */
+        header {
+            background-color: var(--nature-green);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 0.2rem;
+        }
+
+        /* 갤러리 컨테이너 */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* 반응형 갤러리: 기본 3열 설정 */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3열 구성 */
+            grid-template-rows: repeat(2, auto);    /* 2행 구성 */
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .caption {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--nature-green);
+        }
+
+        /* 반응형 대응: 화면이 작아지면 열 개수 조절 */
+        @media (max-width: 900px) {
+            .gallery { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .gallery { grid-template-columns: 1fr; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--accent-earth);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>황혜은</h1>
+        <p>자연의 평온함과 동물의 귀여움을 담은 페이지</p>
+    </header>
+
+    <div class="container">
+        <div class="gallery">
+            <!-- 1행 -->
+            <div class="gallery-item">
+                <img src="img1.jpg" alt="고양이">
+                <div class="caption">나른한 고양이</div>
+            </div>
+            <div class="gallery-item">
+                <img src="img2.jpg" alt="강아지">
+                <div class="caption">미소 짓는 강아지</div>
+            </div>
+            <div class="gallery-item">
+                <img src="img3.jpg" alt="다람쥐">
+                <div class="caption">호기심 많은 다람쥐</div>
+            </div>
+            <!-- 2행 -->
+            <div class="gallery-item">
+                <img src="img4.jpg" alt="거북이">
+                <div class="caption">평화로운 거북이</div>
+            </div>
+            <div class="gallery-item">
+                <img src="img5.jpg" alt="토끼">
+                <div class="caption">보들보들 토끼</div>
+            </div>
+            <div class="gallery-item">
+                <img src="img6.jpg" alt="여우">
+                <div class="caption">지혜로운 여우</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 황혜은. 자연을 사랑하는 마음으로 제작되었습니다.
+    </footer>
+
+</body>
+</html>
