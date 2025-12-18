@@ -1,14 +1,86 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>황혜은 자기소개</title>
+    <style>
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
+
 <body>
+    <header>
+        <h1>황혜은</h1>
+        <nav>
+            <a href="">홈</a>
+            <a href="">소개</a>
+            <a href="">연락처</a>
+        </nav>
+    </header>
     <main>
-        
+        <section>
+            <img src="../img/img1.jpg" alt="고양이 사진" class="responsive-img">
+            <p><strong>안녕하세요. 황혜은입니다</strong></p>
+        </section>
+        <section>
+            <h3>좋아하는 음식</h3>
+            <ul>
+                <li>빵</li>
+                <li>쌀국수</li>
+                <li>고기</li>
+            </ul>
+        </section>
+        <section>
+            <h3>이력/경력</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>제목</th>
+                        <th>내용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>경력1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>경력2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>경력3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h3>좋아하는 영상</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/v3J99bdwdgU?si=4acG-1XRfUB9mpAH"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section>
+            <form action="">
+                <input type="text" name="name" id="name" placeholder="이름을 입력하세요"><br>
+                <input type="email" name="email" id="email" placeholder="example.email.com"><br>
+                <label for="message">문의내용 : </label><br>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="내용을 입력하세요"></textarea><br>
+                <input type="submit" value="전송하기" onclick="alert('전송하였습니다!')">
+            </form>
+        </section>
+        <footer>
+            Copyright 2025
+        </footer>
     </main>
-    
+
 </body>
+
 </html>
