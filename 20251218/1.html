@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section+section {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- html 태그 수업 20251218 2교시 1번째 -->
+
+    <header>
+        <h1>로고</h1>
+    </header>
+
+    <h1>태그 복습 및 정리</h1>
+    <h2>div 태그 확인</h2>
+    <div>
+        <h3>임시 제목</h3>
+        <p>임시 내용</p>
+    </div>
+    <h2>span 태그 확인</h2>
+    <p>어떤 내용을 뒤에 붙여도. 붙일 수 없다.</p>
+    <span>현재 태그의 콘텐츠 영역 만큼만 차지함.</span>
+
+
+    <main>문서 핵심 내용 전달. 페이지 당 한번만 사용
+        <section>
+            <h2>자기소개</h2> ...
+        </section>
+        <section>
+            <h2>포트폴리오</h2> ...
+        </section>
+    </main>
+
+    <footer>Copyright 2025</footer>
+
+
+    <!-- html 태그 수업 20251218 2교시 2번째 -->
+    <nav>
+        <a href="#">홈</a>
+        <a href="#">소개</a>
+    </nav>
+    <nav>
+        <ul>
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+        </ul>
+    </nav>
+
+    <style>
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <section>
+        <h2>이미지 크기 예시</h2>
+        <img src="../img/img1.jpg" alt="고양이 사진" width="200" height="200">
+    </section>
+    <section>
+        <h2>이미지 크기 예시2 반응형</h2>
+        <img src="../img/img1.jpg" alt="고양이 사진" class="responsive-img">
+    </section>
+    <section>
+        <h2>이미지 크기 예시3 반응형 </h2>
+        <img src="../img/img2.jpg" alt="개 사진" class="responsive-img">
+    </section>
+
+    <!-- html 태그 수업 20251218 3교시 3번째 -->
+    <section>
+        <h2>이미지 크기 예시4 반응형 </h2>
+        <img src="../img/img2.jpg" width="100%" alt="개 사진" style="width:150px; height:150px; object-fit: cover;">
+    </section>
+
+    <form action="">
+        <!-- <p>입력 양식 전체를 감싸는 **컨테이너(상자)**</p>
+        <p>주요속성</p>
+        <ul>
+            <li>action : 데이터를 보낼 서버의 주소</li>
+            <li>method : 데이터를 보내는 방식
+                <ol>
+                    <li>GET : </li>
+                    <li>POST : </li>
+                </ol>
+            </li>
+        </ul>
+        <p>input 태그</p>
+        사용자가 데이터를 입력하는 가장 기본적인 창
+        type 의 종류가 많다
+        종류 : 
+        name : 
+        placeholder : 
+        value : 
+        required :  -->
+        <section>
+            <h2>폼 태그 내부의 input 태그 예시1 - type="password"</h2>
+            <input type="password" name="" id="" placeholder="비번">
+            <input type="text" name="" id="" placeholder="이름을 입력하세요">
+            <input type="email" name="" id="" placeholder="example@email.com">
+            <input type="number" name="" id="" min="1" max="10" value="1">
+            <p>
+
+                <input type="checkbox" name="hobby" id="coding" checked><label for="coding">coding</label>
+                <input type="checkbox" name="hobby" id="music"><label for="music">music</label>
+            </p>
+
+            <section>
+                <input type="radio" name="gender" id="male" value="m"><label for="male">남성</label>
+                <input type="radio" name="gender" id="female" value="f"><label for="female">여성</label>
+            </section>
+
+            <section>
+                <input type="file" name="" id="">
+
+            </section>
+            <section>
+                <input type="date" name="" id="">
+            </section>
+            <section>
+                <input type="color" name="" id="">
+            </section>
+            <section>
+                <input type="range" name="" id="" min="0" max="100">
+            </section>
+            <section>
+                <input type="submit" value="가입하기">
+            </section>
+            <section>
+                <input type="reset" value="다시 쓰기">
+            </section>
+            <section>
+                <input type="button" value="중복 확인" onclick="alert('확인되었습니다!')">
+            </section>
+            <section>
+                <label for="message">문의내용 : </label>
+                <textarea name="message" id="message" rows="4" cols="40" placeholder="내용을 입력해 주세요"></textarea>
+            </section>
+            <section>
+                <label for="cars">좋아하는 차종 : </label>
+                <select name="" id="">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+
+                </select>
+            </section>
+            <section>
+                <select name="" id="">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value="" selected></option>
+                    <option value=""></option>
+                </select>
+            </section>
+            <section>
+                <select name="" id="">
+                    <optgroup lable="">
+                        <option value=""></option>
+                    </optgroup>
+                    <optgroup lable="">
+                        <option value=""></option>
+                    </optgroup>
+                </select>
+            </section>
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>사용자명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>홍길동</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>tjdvnsgid</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <caption>주간 식단표</caption>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>점심</td>
+                            <td rowspan="2">비빔밥(세로병합)</td>
+                            <td>저녁</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+            <section>
+                <iframe src="" frameborder="0"></iframe>
+            </section>
+
+
+        </section>
+
+
+
+
+
+
+        <section>
+            <section>
+                <h2>예시1</h2>
+                <p>password: 입력한 내용이 마스킹(●●●) 처리되어 보이지 않습니다.</p>
+                <input type="password" placeholder="비번">
+            </section>
+
+
+            <section>
+                <h2>예시2</h2>
+                <p>text: 가장 일반적인 한 줄 텍스트 입력창입니다.</p>
+                <input type="text" placeholder="이름을 입력하세요">
+            </section>
+
+            <section>
+                <h2>예시3</h2>
+                <p>email: 입력값이 이메일 형식(@ 포함 여부 등)인지 자동으로 체크합니다.</p>
+                <input type="email" placeholder="example@email.com">
+            </section>
+
+            <section>
+                <h2>예시4</h2>
+                <p>number: 숫자만 입력 가능하며, 우측에 숫자를 조절하는 화살표(스피너)가 생깁니다.</p>
+                <input type="number" min="1" max="10" value="1">
+            </section>
+
+            <section>
+                <h2> 예시5 </h2>
+                <p> checkbox: 여러 개를 동시에 선택할 수 있습니다. (다중 선택) </p>
+                <input type="checkbox" id="coding" name="hobby" checked> <label for="coding">코딩</label>
+                <input type="checkbox" id="music" name="hobby"> <label for="music">음악 감상</label>
+            </section>
+
+            <section>
+                <h2> 예시6 </h2>
+                <p> radio: 같은 name 그룹 중에서 단 하나만 선택할 수 있습니다. </p>
+                <input type="radio" id="male" name="gender" value="m"> <label for="male">남성</label>
+                <input type="radio" id="female" name="gender" value="f"> <label for="female">여성</label>
+            </section>
+
+            <section>
+                <h2> 예시7 </h2>
+                <p> file: 내 컴퓨터의 파일을 선택하여 업로드할 수 있습니다. </p>
+                <input type="file">
+            </section>
+
+            <section>
+                <h2> 예시8 </h2>
+                <p> date: 날짜를 선택할 수 있는 캘린더(달력) UI가 나타납니다. </p>
+                <input type="date">
+            </section>
+
+            <section>
+                <h2> 예시9 </h2>
+                <p> color: 색상 선택기(Color Picker)가 나타납니다. </p>
+                <input type="color">
+            </section>
+
+            <section>
+                <h2> 예시10 </h2>
+                <p> range: 슬라이더 바 형태의 숫자 입력 도구입니다. </p>
+                <input type="range" min="0" max="100">
+            </section>
+
+            <section>
+                <h2> 예시11 </h2>
+                <p> submit: 입력한 데이터를 서버로 전송합니다. </p>
+                <input type="submit" value="가입하기">
+            </section>
+
+            <section>
+                <h2> 예시12 </h2>
+                <p> reset: 입력한 모든 내용을 초기화합니다. </p>
+                <input type="reset" value="다시 쓰기">
+            </section>
+
+            <section>
+                <h2> 예시13 </h2>
+                <p> button: 아무 기능이 없으며, 자바스크립트를 연결해 커스텀 기능을 넣을 때 씁니다. </p>
+                <input type="button" value="중복 확인" onclick="alert('확인되었습니다!')">
+            </section>
+
+            <section>
+                <h2> 예시14 </h2>
+                <p> <textarea>	</p>
+                <p>	:사용자가 자기소개, 댓글, 문의 내용 등 긴 텍스트를 입력할 때 사용합니다	</p>
+                        </p>
+                <p>	주요 속성 옵션 4가지	
+                    <ul>
+                        <li>1)rows: 입력창의 세로 줄 수 (높이)를 지정합니다.</li>
+                        <li>2)cols: 입력창의 가로 너비를 지정합니다. (글자 수 기준)</li>
+                        <li>3)placeholder: 입력 전 보여줄 안내 문구입니다.</li>
+                        <li>4)maxlength: 입력 가능한 최대 글자 수를 제한합니다.</li>
+                    </ul>
+                        
+                    <p>기본 예시 코드</p>	
+                    <label for="message">문의 내용:</label><br>	
+                    <textarea id="message" name="message" rows="5" cols="40" placeholder="내용을 입력해 주세요."></textarea>
+                <p>기본값은 태그 사이에 작성합니다.</p>
+            </section>
+
+            <section>
+                <h2> 예시15 </h2>
+                <p> select 태그 (드롭다운 선택 리스트) </p>
+                <p> 여러 개의 선택지 중에서 하나(또는 여러 개)를 고를 수 있는 </p>
+                <p> 드롭다운 목록을 만듭니다. </p>
+                <p> 내부에는 반드시 option 태그가 포함되어야 합니다. </p>
+                <p> 주요 속성 </p>
+                <ul>
+                    <li>1) select: 전체 목록을 감싸는 태그입니다.</li>
+                    <li>2) option: 실제 선택할 수 있는 개별 항목들입니다.</li>
+                    <li>3) value: 서버로 전송될 실제 데이터 값입니다.</li>
+                    <li>4) selected: 페이지 로드 시 기본으로 선택되어 있을 항목을 지정합니다.</li>
+                    <li>5) multiple: 여러 개를 동시에 선택할 수 있게 합니다. (Ctrl/Cmd 키 사용)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2> 예시코드</h2>
+                <label for="cars">좋아하는 차종:</label>
+                <select id="cars" name="cars">
+                    <option value="none">-- 선택하세요 --</option>
+                    <option value="volvo">볼보</option>
+                    <option value="saab">사브</option>
+                    <option value="hyundai" selected>현대</option>
+                    <option value="kia">기아</option>
+                </select>
+                <h2> 응용코드 </h2>
+                <p> 선택지가 너무 많을 때 카테고리별로 그룹화하여 가독성을 높여줍니다. </p>
+                <select name="fruits">
+                    <optgroup label="과일">
+                        <option value="apple">사과</option>
+                        <option value="banana">바나나</option>
+                    </optgroup>
+                    <optgroup label="채소">
+                        <option value="carrot">당근</option>
+                        <option value="tomato">토마토</option>
+                    </optgroup>
+                </select>
+            </section>
+
+
+
+
+
+        </section>
+
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
