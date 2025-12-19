@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media screen and (max-width:500px) {
+            body {
+                background-color: black;
+                color: white
+            }
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            width: 50%;
+            height: 150px;
+            background-color: lightgray;
+            border: 10px solid red;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width:600px) {
+            .product {
+                width: 100%;
+                background-color: pink;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2>실습5</h2>
+        <div class="container">
+            <div class="item">메뉴1</div>
+            <div class="item">메뉴2</div>
+            <div class="item">메뉴3</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>실습6</h2>
+        <div class="product-container">
+            <div class="product">상품1</div>
+            <div class="product">상품2</div>
+            <div class="product">상품3</div>
+            <div class="product">상품4</div>
+            <div class="product">상품5</div>
+            <div class="product">상품6</div>
+        </div>
+    </section>
+    <style>
+        .card {
+            width: 200px;
+            height: 100px;
+            background-color: white;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+        }
+        .fab-button{
+            width: 50px;
+            height: 50px;
+            background-color: aqua;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .input-field{width:200px;padding:10px;box-shadow:inset 2px 2px 5px rgba(0, 0, 0, 0.7);background-color: white;}
+    </style>
+    <section>
+        <h2>그림자 효과</h2>
+        <div class="card">
+            카드에 그림자 효과 주기
+        </div> 
+    </section>
+    <section>
+        <h2>그림자 효과2</h2> 
+        <div class="fab-button">
+            Top
+        </div>
+    </section>
+    <section>
+        <h2>그림자 효과3</h2>
+        <div class="input-field">
+            
+        </div>
+    </section>
+    <section>
+        <h1>꾸미기 효과</h1>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            color: gray
+        }
+
+        .main-text {
+            color: yellow;
+        }
+
+        #title {
+            color: blue
+        }
+    </style>
+</head>
+
+<body>
+    <h1>선택자 우선순위</h1>
+    <p id="title" class="main-text" style="color:green;">어떤 색일까요?</p>
+
+    <style>
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            animation-name: my-slide;
+            animation-duration: 2s;
+            animation-iteration-count: infinite; 
+            border-radius: 50%;
+        }
+
+        @keyframes my-slide {
+            from {
+                margin-left: 0px; 
+            }
+
+            /* 시작 (0%) */
+            to {
+                margin-left: 200px; 
+            }
+
+            /* 끝 (100%) */
+        }
+        .box2 {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            animation-name: my-slide2;
+            animation-duration: 2s;
+            animation-iteration-count: infinite; 
+            border-radius: 50%;
+        }
+
+        @keyframes my-slide2 {
+            0% {
+                margin-left: 0px;
+                background-color: blue;
+            }
+
+            50% {
+                margin-left: 200px;
+                background-color: green;
+                border-radius: 0%;
+                transform: rotate(360deg);
+            }
+            /* 시작 (0%) */
+            100% {
+                margin-left: 0px;
+                background-color: blue;
+            }
+
+            /* 끝 (100%) */
+        }
+    </style>
+    <section>
+        <h1>애니메이션</h1>
+        <div class="box"></div>
+    </section>
+    <section>
+        <h1>애니메이션</h1>
+        <div class="box2"></div>
+    </section>
+
+
+
+</body>
+
+</html>
