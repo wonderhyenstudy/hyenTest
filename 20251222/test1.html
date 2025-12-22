@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내꺼</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li:nth-child(2) {
+            font-weight: bold;
+            color: red;
+        }
+
+        .new-product::before {
+            content: 'NEW';
+            color: red;
+            font-weight: bold border;
+            border:2px solid green;
+            background-color: aqua;
+            animation: blink 1s linear infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2>실습1</h2>
+        <ul>
+            <li>1. </li>
+            <li>2. </li>
+            <li>3. </li>
+        </ul>
+    </section>
+    <section>
+        <h2>실습2</h2>
+        <p class="new-product">아이폰 16</p>
+    </section>
+    <section>
+        <h2>실습3</h2>
+        <style>
+            .box>span {
+                font-weight: bold;
+                color: blue;
+            }
+
+            h3+p {
+                font-weight: bold;
+                color: orange
+            }
+        </style>
+        <div class="box">
+            <span>나: 자식 (Child)</span>
+            <div>
+                <span>나: 손자 (Grandchild)</span>
+            </div>
+            <span>나: 자식 (Child)</span>
+        </div>
+
+        <h3>기준점 (Header)</h3>
+        <p>첫 번째 문단</p>
+        <p>두 번째 문단</p>
+        <p>세 번째 문단</p>
+    </section>
+
+
+    <!-- 
+        속성 선택자
+        자주 사용하는 속성
+    * `[attr="value"]`: 속성값이 정확히 일치할 때
+    * `[attr^="value"]`: 특정 값으로 **시작**할 때
+    * `[attr$="value"]`: 특정 값으로 **끝날** 때 (확장자 구분 등)
+    * `[attr*="value"]`: 특정 값을 **포함**하고 있을 때 
+    -->
+    <section>
+        <style>
+            a {
+                display: block;
+            }
+
+            /* href에 "https"가 포함된 링크는 외부 링크 아이콘 표시 */
+            a[href*="https"] {
+                color: green;
+                font-weight: bold;
+            }
+
+            /* .pdf로 끝나는 링크 옆에 (PDF) 텍스트 추가 */
+            a[href$=".pdf"]::after {
+                content: " (PDF 문서)";
+                color: red;
+                font-size: 12px;
+            }
+        </style>
+        <a href="https://naver.com">네이버</a>
+        <a href="image_01.jpg">이미지 파일</a>
+        <a href="manual.pdf">설명서 PDF</a>
+
+    </section>
+    <section>
+        <h2>실습4</h2>
+        <style>
+            a[href^="mailto"]{color:purple}
+            a[href$=".png"]{background-color: lightgray;}
+        </style>
+        <div class="link-list">
+            <a href="mailto:user@example.com">이메일 보내기</a>
+            <a href="tel:010-1234-5678">전화 걸기</a>
+            <a href="/images/photo.png">사진.png</a>
+            <a href="/images/logo.jpg">로고.jpg</a>
+        </div>
+    </section>
+</body>
+
+</html>
