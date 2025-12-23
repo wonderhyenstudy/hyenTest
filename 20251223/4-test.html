@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내꺼</title>
+</head>
+
+<body>
+    <section>
+        <h2>버튼(스위치) - 다크모드, 배경을 검은배경으로 전환</h2>
+        조건문-상태변수 활용해서 이벤트 처리 (******)
+        <br><br>
+        <button id="modeBtn">다크모드 켜기</button><br>
+        <h1 id="text">안녕하세요!</h1>
+
+        <script>
+            const btn = document.getElementById("modeBtn");
+            let isDark = false;
+            btn.addEventListener('click', function () {
+                if (isDark === false) {
+                    // 다크 모드가 아닐 때 -> 다크 모드로 변경
+                    document.body.style.backgroundColor = 'black';
+                    document.body.style.color = 'white';
+                    btn.innerText = "라이트 모드 켜기"; // 버튼 글자도 변경
+                    isDark = true; // 상태 업데이트 (이제 다크모드임)
+                } else {
+                    // 다크 모드일 때 -> 원래대로 복구
+                    document.body.style.backgroundColor = 'white';
+                    document.body.style.color = 'black';
+                    btn.innerText = "다크 모드 켜기";
+                    isDark = false; // 상태 업데이트 (이제 다크모드 아님)
+                }
+            });
+
+
+        </script>
+    </section>
+    <section>
+        <h2>실습6 : 비밀번호 보기/가리</h2>
+        <input type="password" id="passInput" value="mypassword123">
+        <button id="viewBtn">비밀번호 보기</button>
+        <script>
+            const passInput = document.getElementById("passInput");
+            const viewBtn = document.getElementById("viewBtn");
+
+            let isVisible = false;
+
+            viewBtn.addEventListener("click", function () {
+                if (isVisible === false) {
+                    passInput.type = "text";
+                    viewBtn.innerText = "비밀번호 숨기기";
+                    viewBtn.style.backgroundColor = "yellow";
+                    isVisible = true;
+                } else {
+                    passInput.type = "password";
+                    viewBtn.innerText = "비밀번호 보기" ;
+                    viewBtn.style.backgroundColor = "";
+                    isVisible = false;
+                }
+
+            });
+
+        </script>
+    </section>
+    
+</body>
+
+</html>

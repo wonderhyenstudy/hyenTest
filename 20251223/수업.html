@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수업</title>
+    <script>
+        function cry() { //매개변수 선언
+            console.log("웁스");
+        }
+        cry();
+        cry();
+
+        //함수선언
+        function plus(a, b) { //매개변수 a,b 선언
+            let result = a + b;
+            console.log("두 수의 합은 : " + result);
+        }
+        plus(10, 20); //인수선언
+        plus(100, 50); //인수선언 
+
+
+
+    </script>
+</head>
+
+<body>
+    <h1 id="heading">안녕하세요?</h1>
+    <p id="text">저는 평범한 문장입니다.</p>
+    <script>
+        // 2. JS로 태그 찾아오기
+        const h1Tag = document.getElementById("heading");
+        const pTag = document.getElementById("text");
+
+        // 3. 내용 바꾸기
+        h1Tag.innerText = "반갑습니다! JS로 바꿨어요.";
+
+        // 4. 스타일(색상) 바꾸기
+        pTag.style.color = "blue";
+        pTag.style.fontWeight = "bold";
+
+    </script>
+    <section>
+        <h2>함수</h2>
+        <p>
+            두 집합 사이의 관계를 나타내는 개념. <br>
+            입력값을 넣으면 결과값이 나오는 대응 관계.<br>
+            재료(변수)와 도구(연산자, 조건문, 반복문)을 이용해서<br>
+            나만의 도구 만들기<br>
+            기본문법<br>
+            만드는 단계(선언)<br>
+            사용하는 단계(호출)<br>
+
+            재사용성, 모듈화 <br>
+
+            1. 함수 만들기(선언)
+            function 마법주문() {
+
+            }
+
+            2. 입력값을 받는 함수
+            function plus(a, b) {
+            let result a + b;
+            console.log{"두 수의 합은" + result};
+            }
+
+            3. 매개변수
+            function (매개변수) {
+
+            }
+
+            매개변수 / 인수
+
+            DOM조작
+            자바스크립트가 HTML태그들을 알아볼 수 있게 만든 지도
+
+            html : 그냥 작성된 문서
+            DOM : html코드를 해석해서 만든 웹페이지의 지도
+
+            찾아서 조작한다
+
+            document.getElementById("");
+            //웹페이지전체에서 이 아이디로 갖고와
+            document.getElementById("");
+
+            사용자의 행동에 반응하는 이벤트
+            이벤트 Event : 사건
+            리스너 Listener : 감시하는 경비원
+
+            3
+            이벤트(Event)
+            사용자의 행동(클릭, 입력, 스크롤 등)에 반응할 때 비로소
+            **살아있는 웹사이트**가 됩니다.
+            자바스크립트의 꽃, **이벤트(Event)**
+
+            ### 1. 이벤트(Event)와 리스너(Listener) 개념 잡기
+
+            이것만 기억하세요. 자바스크립트는 항상 **대기**하고 있어야 합니다.
+
+            * **이벤트(Event):** 사건입니다. (예: "버튼이 클릭됨", "마우스가 올라감")
+            * **이벤트 리스너(Event Listener):** 사건을 감시하는 '경비원'입니다.
+            특정 요소에 붙어서
+            **"야, 누가 너 클릭하면 나한테 말해,
+            내가 정해진 행동(함수)을 할게!"** 라고 명령을 내려놓는 것입니다.
+
+
+            ### 2. 기본 문법: `addEventListener`
+
+            가장 많이 쓰는 표준 방식입니다.
+
+            ```javascript
+            요소.addEventListener('어떤사건', 할일_함수);
+
+            ```
+
+            * **요소:** `document.getElementById` 등으로 잡아온 HTML 태그
+            * **어떤사건:** `'click'`, `'mouseover'` 등 (따옴표 필수!)
+            * **할일_함수:** 사건이 터졌을 때 실행할 코드 덩어리
+
+            기본예시코드
+            버튼을 누르면 제목 색 변경하기.
+
+            ```html
+            <h1 id="title">여기를 보세요!</h1>
+            <button id="changeBtn">색상 변경 마법</button>
+
+            ```
+
+            **JavaScript**
+
+            ```javascript
+            // 1. 요소 잡아오기 (변수에 저장)
+            const myTitle = document.getElementById('title');
+            const myBtn = document.getElementById('changeBtn');
+
+            // 2. 버튼에 '경비원(리스너)' 붙이기
+            myBtn.addEventListener('click', function() {
+            // 3. 클릭되었을 때 실행할 코드
+            myTitle.style.color = 'blue';
+            myTitle.style.backgroundColor = 'yellow';
+            alert('색상이 변경되었습니다!'); // 알림창 띄우기
+            });
+
+
+            
+
+
+        </p>
+    </section>
+</body>
+
+</html>

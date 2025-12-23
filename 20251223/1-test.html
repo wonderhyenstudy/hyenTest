@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내꺼</title>
+    <style>
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px auto;
+            padding: 50px;
+            color: purple;
+            border: 5px solid skyblue;
+        }
+    </style>
+    <script>
+        // 실습1
+        function myIntro() {
+            console.log("황혜은입니다.");
+        };
+        myIntro();
+        myIntro();
+
+        // 실습2
+        function printTwoDan() {
+            console.log("==== 구구단 2단 ====");
+            for (i = 1; i <= 9; i++) {
+                console.log("2" + " x " + i + " = " + 2 * i)
+            }
+        };
+        printTwoDan();
+
+
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1 id="title">오늘도<br>홧팅!</h1>
+    <script>
+        const myTitle = document.getElementById("title");
+        myTitle.innerText = "바뀌네.<br> 웁쓰~";
+        myTitle.innerHTML = "바뀌네.<br> 웁쓰~";
+        myTitle.style.fontSize = "50px";
+        myTitle.style.color = "green";
+    </script>
+
+    <h2>실습3,4</h2>
+    <h2 id="name">이름없음</h2>
+    <p id="price">50,000원</p>
+    <script>
+        const myName = document.getElementById("name");
+        myName.innerText = "황혜은";
+        myName.style.color = "blue";
+
+        const priceTag = document.getElementById("price");
+        priceTag.innerText = "30,000원 (세일 중!)";
+        priceTag.style.color = "red";
+        priceTag.style.fontSize = "30px";
+        priceTag.style.fontWeight = "bold";
+    </script>
+
+    <section>
+        <h2 id="">실습5</h2>
+        <input type="text" id="nameInput" placeholder="이름을 입력하세요">
+        <button id="greetBtn">입력 완료</button>
+        <h2 id="resultText">여기 인사말이 나옵니다.</h2>
+        <script>
+            const myInput = document.getElementById("nameInput");
+            const myBtn = document.getElementById("greetBtn");
+            const myResult = document.getElementById("resultText");
+            
+            myBtn.addEventListener('click',
+                function () {
+                    let userName = myInput.value
+                    // alert("반갑습니다, " + userName + "님!");
+                    myResult.innerText = "반갑습니다, " + userName + "님!";
+                    myResult.style.color = "blue";
+                }
+            ); 
+            myBtn.addEventListener('mouseover',
+                function () {
+                    let userName2 = myInput.value
+                    myResult.innerText = userName2 + "님 어서 눌러눌러";
+                    myResult.style.color = "red";
+                } 
+            );
+
+
+        </script>
+    </section> 
+
+
+
+</body>
+
+</html>

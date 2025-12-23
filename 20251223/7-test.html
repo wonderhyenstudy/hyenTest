@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내꺼</title>
+</head>
+
+<body>
+    <input type="text" id="itemInput" placeholder="사고 싶은 물건">
+    <button id="addBtn">담기</button>
+    <button id="newBtn">List 새로담기</button>
+
+    <ul id="itemList"></ul>
+    <script>
+        // 비어있는 장바구니 배열을 만듭니다.
+        let cart = [];
+
+        const input = document.getElementById('itemInput');
+        const btn = document.getElementById('addBtn');
+        const itemList = document.getElementById("itemList");
+        const newBtn = document.getElementById("newBtn");
+
+        // btn.addEventListener('click', function () {
+        //     const item = input.value; // 1. 입력값 가져오기
+
+        //     if (item !== "") {
+        //         cart.push(item); // 2. 배열에 추가하기 (핵심!)
+
+        //         // 확인용 알림 (현재 담긴 목록 전체를 보여줌)
+        //         alert("현재 장바구니: " + cart);
+
+        //         input.value = ""; // 3. 입력창 비우기 
+
+        //     }
+        // });
+
+        
+        newBtn.addEventListener('click', function () {
+            const item = input.value; // 1. 입력값 가져오기 
+
+            
+            if (item !== "") {  
+                cart.push(item); // 2. 배열에 추가하기 (핵심!)
+
+                // itemList.innerHTML = "<li>" + item + "</li>"; 
+                // for (i = 0; i < 100; i++) {
+                //     itemList.innerHTML = "<li>" + cart + "</li>";
+                // }
+                
+                itemList.innerHTML += "<li>" + item + "</li>";
+                
+                input.value = ""; // 3. 입력창 비우기
+
+
+                
+            }
+        });
+
+
+
+
+
+    </script>
+
+    <section>
+        <h2>실습 10, 11, 12</h2>
+    </section>
+    <script>
+        // let myBox = ["딸기", "메론", "망고"]
+        // // alert(myBox[1]);
+
+        // myBox[1] = "메롱"
+
+        // // let myBox2 = ["콜라", "사이다"];
+        // // myBox2[0] = "물"; // 0번 자리에 "물"을 대입
+        
+        // console.log(myBox[1]);
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

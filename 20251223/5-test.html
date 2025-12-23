@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내꺼</title>
+</head>
+
+<body>
+    <h1>실습7, 8, 9</h1>
+    <section>
+        <div>
+            <input type="text" id="nameInput" placeholder="이름을 입력하세요">
+            <button id="greetBtn">인사하기</button>
+            <h2 id="resultText">결과가 여기에 나옵니다.</h2>
+            <button id="alertBtn">알림창(Alert) 버전</button>
+        </div>
+        <script>
+            const input = document.getElementById('nameInput');
+            const btn = document.getElementById('greetBtn');
+            const result = document.getElementById('resultText');
+            const alertResult = document.getElementById('alertBtn');
+
+            alertBtn.addEventListener('click', function () {
+                let inputTxt = nameInput.value
+                if (inputTxt === "") {
+                    alert("이름을 입력해주세요");
+                    nameInput.value = "";
+                } else {
+                    alert(inputTxt + "님 안녕하세요!");
+                    nameInput.value = "";
+                }
+                // let inputTxt = nameInput.value
+                // alert( inputTxt + "님 안녕하세요!");
+                // nameInput.value ="";
+
+            });
+        </script>
+        <br><br>
+        <div>
+            <input type="text" id="num1" placeholder="숫자1">
+            <input type="text" id="num2" placeholder="숫자2">
+            <button id="plusBtn">버튼내용:숫자 더하기 계산 버전</button>
+        </div>
+        <script>
+            const num1 = document.getElementById('num1');
+            const num2 = document.getElementById('num2');
+            const plusBtn = document.getElementById('plusBtn');
+
+            plusBtn.addEventListener('click', function () {
+                //결과는 문자열. 숫자로 변경 필요
+                const numValue1 = Number(num1.value)
+                const numValue2 = Number(num2.value)
+                const sum = numValue1 + numValue2
+                alert("두 숫자의 합은 : " + sum);
+            });
+        </script>
+        <br><br>
+        <div>
+            <input type="text" id="newInput">
+            <h2 id="newText">내용이 바껴요</h2>
+        </div>
+    </section>
+    <script>
+        const newInput = document.getElementById('newInput');
+        const newText = document.getElementById('newText');
+        newInput.addEventListener('input', function () {
+            // const newResult = newText.innertext 
+            // alert(inputTxt2);
+
+            const newResult = newInput.value; 
+            newText.innerText = newResult;
+        });  
+    </script>
+    <section>
+        <h2>여러개의 데이터 배열</h2>
+        <!-- 변수 : 작은 상자 데이터 하나만 담음
+        쇼핑몰에 상푸 어러개 담기. 100개~
+        배열 []를 사용해서 여러 데이터를 묶는다
+        순서는 0번부터 시작
+        추가는 맨 뒤에 칸을 추가 -->
+        <script>
+            let fruits = ["1포도", "2딸기" , "3수박"];
+            console.log(fruits[0]);
+            console.log(fruits.length); 
+        </script>
+    </section>
+</body>
+
+</html>

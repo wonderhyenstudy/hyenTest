@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>디버깅 실습 페이지</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        #display { font-size: 30px; color: blue; margin: 20px; }
+        button { padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1 id="main-title">디버깅 연습 (F12를 누르세요)</h1>
+    <div id="display">0</div>
+    <button id="btn">숫자 올리기</button>
+
+    <script>
+        // 실습 1: 바로 실행되는 코드 (중단점 연습용)
+        console.log("스크립트 시작!");
+        
+        let count = 0;
+        const displayDiv = document.getElementById("display");
+        const titleElement = document.getElementById("main-title");
+
+        // 실습 2: 버튼 클릭 시 실행되는 함수
+        document.getElementById("btn").addEventListener("click", function() {
+            count = count + 1;
+            
+            // 일부러 만든 오류 구역 (id가 'wrong-id'인 요소는 없습니다)
+            // 아래 줄에서 'Cannot set properties of null' 에러를 유도해 보세요.
+            const wrongElement = document.getElementById("wrong-id");
+            
+            // 디버거에서 이 지점을 관찰해보세요
+            updateText(count);
+        });
+
+        function updateText(num) {
+            const message = "현재 숫자: " + num;
+            displayDiv.innerText = message;
+            console.log(message);
+        }
+    </script>
+</body>
+</html>
