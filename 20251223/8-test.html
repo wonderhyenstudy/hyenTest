@@ -11,30 +11,59 @@
     <section>
         <h2>숙제 - 중복 상품 막기 (`includes`)</h2>
         <input type="text" id="itemInput" placeholder="상품을 입력해주세요">
-        <button id="addBtn">장바구니</button>
+        <button id="newBtn">장바구니</button>
         <ul id="itemList"></ul>
     </section>
     <script>
-        const itemInput = document.getElementById("itemInput");
-        const addBtn = document.getElementById("addBtn");
-        const itemList = document.getElementById("itemList");
-
         let cart = [];; //배열 정의  
 
-        addBtn.addEventListener("click", function () {
-            const item = itemInput.value; // 1. 입력값 가져오기  
-            const itemValue = cart.includes(item) //이미 포한 되어 있는지 확인
-            
-            // console.log(itemValue); 
+        const itemInput = document.getElementById("itemInput");
+        const newBtn = document.getElementById("newBtn");
+        const itemList = document.getElementById("itemList");
 
-            if (itemValue === true) {
-                alert("이미 장바구니에 있습니다!"); 
-            } else { 
-                cart.push(item);
-                itemList.innerHTML += "<li>" + item + "</li>"; 
-            };
-            itemInput.value = ""; // 3. 입력창 비우기
+        //선생님 방법
+       
+        newBtn.addEventListener("click", function () {
+            const item = itemInput.value;
+
+            if (item === "") {
+                return;
+                alert("값을 입력해주세요!");
+            }
+            
+
+            else if (cart.includes(item) === true) {
+                alert("이미 장바구니에 있습니다!");
+                itemInput.value = ""; // 3. 입력창 비우기
+            } else {
+                cart.push(item); // 2. 배열에 추가하기 (핵심!)
+                itemList.innerHTML += "<li>" + item + "</li>";
+                itemInput.value = ""; // 3. 입력창 비우기
+            }
         });
+
+
+        //내방법
+        
+
+        // newBtn.addEventListener("click", function () {
+        //     const item = itemInput.value; // 1. 입력값 가져오기  
+        //     //유효성 검사 
+        //     //중복여부/기봄검사/데이터유무/조건검사/지밀번호길이, 특수문자 포함여부
+
+
+        //     const itemValue = cart.includes(item) //이미 포한 되어 있는지 확인
+
+        //     // console.log(itemValue); 
+
+        //     if (itemValue === true) {
+        //         alert("이미 장바구니에 있습니다!");
+        //     } else {
+        //         cart.push(item);
+        //         itemList.innerHTML += "<li>" + item + "</li>";
+        //     };
+        //     itemInput.value = ""; // 3. 입력창 비우기
+        // });
 
 
 

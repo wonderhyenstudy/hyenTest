@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습용</title>
+    <style>
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: 0
+        }
+        h1 {
+            width: 100%;
+            padding: 6px;
+            color: yellow;
+            font-size: 14px;
+            font-weight: normal;
+            text-align: center;
+            background-color: green;
+        }
+        /* .btn-primary { */
+        button { 
+            padding:5px 10px; color:white; font-size: 16px;; background-color:#333; border:0; border-radius: 4px; cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>실습1</h1>
+    <h2>점심 메뉴</h2>
+    <ul id="menuList"></ul>
+    <script>
+        // 점심 메뉴 만들기
+        // 1. 아래 제공된 `menus` 배열을 그대로 사용하세요.
+        // 2. `forEach`를 사용하여 각 메뉴를 하나씩 꺼내세요.
+        // 3. `item.name`과 `item.price`를 조합하여 리스트에 추가하세요.
+        // 4. 출력 예시: `<li>비빔밥 : 8000원</li>`
+
+        const menus = [
+            { name: "비빔밥", price: 8000 },
+            { name: "김치찌개", price: 7500 },
+            { name: "돈까스", price: 9000 }
+        ]
+
+        const menuList = document.getElementById('menuList');
+
+        menus.forEach(function(item){
+            menuList.innerHTML += `<li>${item.name} : ${item.price}</li>`
+        }) 
+    </script>
+
+    <section>
+        <h1>실습2</h1>
+        <div id="profileCard"></div>
+    </section>
+    <script>
+        // 직원 카드 만들기
+        // 이름 : 
+        // 직업 : 
+        // 기술 : 
+        
+        // 1. 아래 `developer` 객체를 사용하세요.
+        // 2. `skills`는 배열이므로, 그냥 출력하면 `HTML,CSS,JS` 처럼 나옵니다.
+        // * **힌트:** `${developer.skills.join(' / ')}`를 쓰면
+        // `HTML / CSS / JS` 처럼 멋지게 나옵니다. 
+        // 3. `isLeader`가 `true`면 "팀장", `false`면 "팀원"으로 출력하세요. (삼항 연산자 활용)
+
+        const developer = {
+            name: "김코딩",
+            role: "웹 개발자",
+            skills: ["HTML", "CSS", "JavaScript"],
+            isLeader: true
+        }
+        const card = document.getElementById('profileCard');
+        card.innerHTML = `
+            <h2>${developer.name}</h2> 
+            <p>${developer.role}</p> 
+            <p>${developer.skills}</p> 
+            <p>${developer.isLeader?"팀장":"팀원"}</p>
+        ` 
+    </script>
+
+    <section>
+        <h1>실습3</h1>
+        <div id="postBox"></div>
+        <button id="likeBtn">좋아요 누르기</button>
+        <script>
+            // 1. `post` 객체를 만듭니다: `{ title: "오늘의 일기", likes: 0 }`
+            // 2. 처음 화면에 제목과 좋아요 수를 보여줍니다.
+            // 3. 버튼을 클릭하면:
+            // * 객체의 `likes` 숫자를 1 올립니다. (`post.likes++`)
+            // * **중요:** 숫자가 올랐으니
+            // `innerHTML`을 **다시 한 번 실행**해서 화면을 업데이트해줍니다.
+            // (복사 붙여넣기 하면 됩니다)
+
+            const post = {title: "오늘의 일기", likes: 0};
+            const postBox = document.getElementById('postBox');
+            const likeBtn = document.getElementById('likeBtn');
+
+            function render(){
+                postBox.innerHTML = `
+                    <h3>제목 : ${post.title}</h3>
+                    <p>좋아요 : ${post.likes} 개</p>
+                `;
+            };
+
+            render();
+
+            likeBtn.addEventListener('click', function(){
+                post.likes++
+                render();
+
+
+            });
+                
+                
+
+        </script>
+    </section>
+
+    <section>
+        <h1>실습3</h1>
+        <script>
+            
+        </script>
+    </section>
+
+    <section>
+        <h1>실습4</h1>
+        <script>
+            
+        </script>
+    </section>
+
+    <section>
+        <h1>실습5</h1>
+        <script>
+            
+        </script>
+    </section>
+
+    <section>
+        <h1>실습6</h1>
+        <script>
+            
+        </script>
+    </section>
+
+    <section>
+        <h1>실습7</h1>
+        <script>
+            
+        </script>
+    </section>
+</body>
+
+</html>

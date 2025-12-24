@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내꺼</title>
+    <style>
+        h1 {
+            width: 100%;
+            padding: 6px;
+            color: yellow;
+            font-size: 14px;
+            font-weight: normal;
+            text-align: center;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>실습4 : 이미지 갤러리 만들기(속성 제어)</h1>
+    <h2>동물 리스트</h2>
+    <div id="animal-list" style="display: flex;"></div>
+
+    <!-- <img src="../img/img1.jpg" alt="" style="width:200px;"> -->
+    <script>
+        // 1. 아래 `animals` 데이터를 사용하세요.
+        // 2. `img` 태그를 사용해야 합니다.
+        // 3. `<img src="주소">` 부분의 주소 자리에 `${item.img}`를 넣어보세요.
+        // 4. 이미지 크기는 `width: 200px` 정도로 스타일을 주세요. 
+
+
+        const animals = [
+            { name: "고양이", img: "../img/img1.jpg" },
+            { name: "멍멍이", img: "../img/img2.jpg" },
+            { name: "다람쥐", img: "../img/img3.jpg" }
+        ];
+
+        const animalContainer = document.getElementById('animal-list'); 
+        animals.forEach(function(item){
+            console.log(item);
+            animalContainer.innerHTML += `
+                <div style="margin-right:20px; text-align:center; width:33.33% ">
+                    <p>${item.name}</p>
+                    <p><img src=${item.img} style="width:100%;border-radius:10px;"></p>
+                </div>
+            `
+         }); 
+
+    </script>
+</body>
+
+</html>

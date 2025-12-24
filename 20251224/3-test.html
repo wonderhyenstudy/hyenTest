@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내꺼</title>
+    <style>
+        h1 {
+            width: 100%;
+            padding: 6px;
+            color: yellow;
+            font-size: 14px;
+            font-weight: normal;
+            text-align: center;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>수업</h1>
+    <h2>실습2 : 프로필 카드 만들기 (배열 포함)</h2>
+    <div id="profileCard"></div>
+    <script>  
+        // 객체 안에는 문자나 숫자뿐만 아니라 **배열(Array)**도 들어갈 수 있습니다.
+        // 개발자 프로필 객체 안에 있는 **기술 스택(skills)** 배열을 화면에 예쁘게 보여주세요. 
+
+
+        // 1. 아래 `developer` 객체를 사용하세요.
+        // 2. `skills`는 배열이므로, 그냥 출력하면 `HTML,CSS,JS` 처럼 나옵니다.
+        // * **힌트:** `${developer.skills.join(' / ')}`를 쓰면 `HTML / CSS / JS` 처럼 멋지게 나옵니다.
+
+
+        // 3. `isLeader`가 `true`면 "팀장", `false`면 "팀원"으로 출력하세요. (삼항 연산자 활용)
+
+        // ```javascript
+        // const developer = {
+        // name: "김코딩",
+        // role: "웹 개발자",
+        // skills: ["HTML", "CSS", "JavaScript"],
+        // isLeader: true
+        // };
+
+        // const card = document.getElementById('profileCard');
+
+        // // 여기에 코드를 작성하세요
+        const developer = {
+            name: "김코딩",
+            role: "웹 개발자",
+            skills: ["HTML", "CSS", "JavaScript"],
+            isLeader: true
+        };
+        const card = document.getElementById('profileCard');
+        card.innerHTML = `
+            <h3>이름: ${developer.name}</h3>
+            <p>직업: ${developer.role}</p>
+            <p>기술: ${developer.skills}</p>
+            <p>직책: ${developer.isLeader ? "팀장" : "팀원"}</p>
+        `;  
+
+    </script>
+    <h2>실습3 : 좋아요 버튼 (데이터 변경 후 화면 갱신)</h2>
+    <div id="postBox"></div>
+    <button id="likeBtn">좋아요 누르기</button>
+    <script>
+        
+        // 지금까지는 처음에 한 번만 화면을 그렸습니다.
+        // 이번에는 **버튼을 누르면 객체의 숫자가 올라가고, 화면도 바뀌는** 기능을 만들어봅니다.
+        // **"데이터가 변하면 화면도 다시 그려줘야 한다"**는 리액트(React) 같은 프레임워크의 기초 원리입니다
+
+        
+        let post = {
+            title: "오늘의 일기", 
+            likes: 0
+        };
+
+        const postBox = document.getElementById('postBox');
+        const likeBtn = document.getElementById('likeBtn');  
+
+        function render() { //그린다
+            postBox.innerHTML = `
+                <h3>제목 : ${post.title}</h3>
+                <p>좋아요 : ${post.likes} 개</p>  
+            `
+        };
+        render();   
+        
+        likeBtn.addEventListener('click', function(){
+            post.likes++
+            console.log(post.likes); 
+            render(); 
+        });
+        
+        // postBox.innerHTML = '${post.title}${post.likes}';    
+
+        // likeBtn.addEventListener('click', function(){
+        //     post.likes++
+        //     console.log(post.likes); 
+        //     postBox.innerHTML = '${post.title}${post.likes}'; 
+        // });
+
+        // 1. `post` 객체를 만듭니다: `{ title: "오늘의 일기", likes: 0 }`
+        // 2. 처음 화면에 제목과 좋아요 수를 보여줍니다.
+        // 3. 버튼을 클릭하면:
+        // * 객체의 `likes` 숫자를 1 올립니다. (`post.likes++`)
+        // * **중요:** 숫자가 올랐으니 `innerHTML`을 **다시 한 번 실행**해서 화면을 업데이트해줍니다. (복사 붙여넣기 하면 됩니다)
+    </script>
+</body>
+
+</html>

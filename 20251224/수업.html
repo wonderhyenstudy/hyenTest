@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수업</title>
+</head>
+
+<body>
+    <script>
+        // 배열 반복문
+        // 배열 : let newList = []
+        // forEach : 배열 안에 있는 데이터들
+        // 배열이름.forEach(function(꺼낸거하나){
+
+        // });
+
+        //const 배열이름 = [{]{key:value, key:value, key:value}]
+
+        // 객체 : 이름표가 달린 정리 상자
+        // 이름, 가격, 설명, 이미지 주소 등 여러 정보가 하나로 묶여 있음
+        // {} .
+        // 배열 [] : 0,1번으로 데이터를 찾는다. 순서 중요
+        // 객체{} : 이름으로 찾는다. 정보 종류 중요. 예) 이력서, 상품 스펙
+
+        // let product = {
+        //    name : "아이폰 15",
+        //    price :  "1200000",
+        //    color : "black"
+        // }
+        // console.log(product.name);
+
+        // 객체를 요소로 하는 배열
+        let product = [
+            {
+                name: "아이폰 15",
+                price: "1200000",
+                color: "black"
+            },
+            {
+                name: "아이폰 15",
+                price: "1200000",
+                color: "black"
+            }
+        ]
+
+    </script>
+
+    <h2>맛있는 과일 목록</h2>
+    <ul id="fruitList"></ul>
+    <script>
+
+        const fruits = ["사과", "바나나", "포도", "수박"];
+        const listContainer = document.getElementById('fruitList');
+
+        fruits.forEach(function (item) {
+            console.log("꺼낸과일 : " + item)
+        });
+
+
+
+    </script>
+    <div id="card"></div>
+    <script>
+        let phone = {
+            model: "갤럭시 S24",
+            price: 1150000,
+            isStock: true // 재고 있음
+        };
+
+        const cardBox = document.getElementById('card');
+
+        //조건부 렌더링 => 조건 ? 조건 참일 경우 해당 내용 나옴 : 거짓일 경우 나옴
+        //백틱 : "변수이름" + 원 => *{변수이름}*원
+        cardBox.innerHTML = `
+            <h3>제품명: ${phone.model}</h3>
+            <p>가격: ${phone.price}원</p>
+            <p>재고상태: ${phone.isStock ? "구매가능" : "품절"}</p>
+        `;
+
+
+    </script>
+    <h2>추천 상품</h2>
+    <div id="product-container"></div>
+
+    <script>
+        const items = [
+            {
+                name: "맥북 프로",
+                price: 3000000,
+                color: "실버"
+            },
+            { name: "아이패드", price: 1000000, color: "그레이" },
+            { name: "에어팟", price: 300000, color: "화이트" }
+        ];
+
+        // 2. 화면 요소 가져오기
+        const container = document.getElementById('product-container');
+
+        // 3. 반복문으로 HTML 만들기 (마법의 구간!)
+        items.forEach(function (item) {
+            // item은 배열 안의 객체 하나하나를 의미합니다.
+            // 첫 번째 바퀴: item = { name: "맥북 프로"... }
+
+            // HTML을 계속 이어 붙입니다 (+=)
+            container.innerHTML += `
+                <div style="border:1px solid #ddd; margin:10px; padding:10px;">
+                    <h3>상품명: ${item.name}</h3>
+                    <p>가격: ${item.price}원</p>
+                    <p>색상: ${item.color}</p>
+                </div>
+            `;
+        });
+    </script>
+
+    <h2>파일분리</h2>  
+    <script src="js.js" defter></script>
+    <script>
+        // 외부파일로 연결
+
+        //tailwind.css
+        //간편한 css
+    </script>
+    
+
+    
+
+</body>
+
+</html>
