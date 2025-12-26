@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinalProject-Todo</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="flex justify-center flex-col mt-20">
+        <h2 class="mb-5 text-center">나의 할 일 목록</h2>
+        <div>
+                <input type="text" name="" id="searchBox" placeholder="할 일 검색">
+                <button id="searchBtn"
+                class="bg-blue-600 text-white p-1 pl-2 pr-2 font-bold">검색</button>
+        </div>
+        <div class="flex justify-center gap-2">
+            <input type="text" name="" id="taskInput" class="border-gray-600 border-2" placeholder="할 일을 적으세요">
+            <button id="addBtn" class="bg-blue-600 text-white p-1 pl-2 pr-2 font-bold">추가하기</button>
+        </div>
+        <ul id="taskList" class="flex justify-center gap-2 flex-col mt-1"></ul>
+    </div>
+
+</body>
+
+</html>
