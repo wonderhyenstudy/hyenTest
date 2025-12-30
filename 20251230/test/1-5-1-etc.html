@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코드 1-5-1 : 옵션(상세페이지)</title>
+    <style>
+        h1{font-size: 18px; text-align: center; margin-bottom:50px;}
+        #animal-list{display: flex;}
+        #animal-list div{margin-right:20px; text-align:center; width:33.33% }
+        #animal-list div img{width:100%;border-radius:10px;}
+    </style>
+</head>
+<body>
+    <h1>동물리스트</h1>
+    <div id="animal-list"></div>
+    <script>
+        // 1. 변수 선언
+        // 2. 배열 선언
+        // 3. forEach 이용
+        const list = document.getElementById('animal-list'); 
+        const animals = [
+            {name: "고양이", src: "img1.jpg"},
+            {name: "멍멍이", src: "img2.jpg"},
+            {name: "다람쥐", src: "img3.jpg"}
+        ];
+
+        animals.forEach(function(item) {
+            console.log(item)
+            list.innerHTML += `
+                <div>
+                    <p>${item.name}</p>
+                    <p><img src="${item.src}" alt="${item.name}"></p>
+                </div>
+            `
+        });
+
+        document.querySelector
+
+        
+
+    </script>
+</body>
+</html>

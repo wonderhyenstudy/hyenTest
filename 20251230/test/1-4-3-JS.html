@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코드 1-4-3 : JS 이벤트 동작</title>
+    <style>
+        h1{font-size: 18px; text-align: center; margin-bottom:50px;}
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-self: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>좋아요 버튼 (데이터 변경 후 화면 갱신)</h1>
+    <section>
+        <div id="postBox">
+            <h3>제목 : 오늘의 일기</h3>
+            <p>좋아요 0개</p>
+        </div>
+        <button id="likeBtn">좋아요 누르기</button>
+    </section>
+    <script>
+
+        // 1. 변수선언
+        // 2. 버튼 클릭시 숫자 올리기
+        // ** 누를때마다 숫자가 1개씩 올라감
+        // 숫자 저장을 어디에 할 것인가???
+
+        // render 구현
+
+        const box = document.getElementById('postBox');
+        const btn = document.getElementById('likeBtn');
+
+        let post = {
+            title: "오늘의 일기", 
+            likes: 0
+        };
+
+        function render() {
+            postBox.innerHTML = `
+                <h3>제목 : ${post.title}</h3>
+                <p>좋아요 ${post.likes} 개</p> 
+            `
+        };
+
+        render();
+
+
+        btn.addEventListener('click', function() {
+            post.likes++
+            console.log(post.likes);
+            render();
+        });
+
+
+
+
+    </script>
+    
+</body>
+</html>

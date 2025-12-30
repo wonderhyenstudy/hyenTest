@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코드 1-4-1 : JS 이벤트 동작</title>
+    <style>
+        h1{font-size: 18px; text-align: center; margin-bottom:50px;}
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-self: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>검색창 입력 값 가져오기</h1>
+    <section>
+        <div>
+            <input type="text" id="nameInput" placeholder="이름을 입력하세요">
+            <button id="greetBtn">인사하기</button>
+        </div>
+        <h2 id="resultText">결과가 여기에 나옵니다</h2>
+    </section>
+    <script>
+        // 1. 변수선언
+        // 2. 버튼 클릭 이벤트
+        // 3. 클릭시 resultText 결과 출력
+        // 4. 클릭시 input 값 리셋
+        // 5. 검증 : 값이 없을경우 "이름을 꼭 입력해주세요!" alert 처리
+
+        const input = document.getElementById('nameInput');
+        const btn  = document.getElementById('greetBtn');
+        const result = document.getElementById('resultText');  
+
+        btn.addEventListener('click', function(){
+
+            const userName = input.value;
+
+            if (userName === "") {
+                alert("이름을 꼭 입력해주세요!");
+            } else {
+                result.innerText = userName + "님, 환영합니다!";
+                input.value = "";
+            };
+
+           
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

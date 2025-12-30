@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코드 1-4-2 : JS 이벤트 동작</title>
+    <style>
+        h1{font-size: 18px; text-align: center; margin-bottom:50px;}
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-self: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>버튼(스위치) - 다크모드, 배경을 검은배경으로 전환</h1>
+    <section> 
+        <button id="modeBtn">다크모드 켜기</button>
+    </section>
+    <script>
+        // 1. 변수선언 
+        // 2. 버튼 클릭 이벤트
+        // 3. 다크모드 일 경우 -> 배경 black, 글자색상 white
+        // 4. 라이트모드 일 경우 -> 배경 white, 글자색상 black 
+        // ** 다크모드와 라이트모드 저장할 변수 필요
+        // 모드변환 저장을 어디에 할 것인가?
+
+
+        const btn = document.getElementById('modeBtn');
+        let isDark = false;
+
+        btn.addEventListener('click', function() {
+            if (isDark === false) {
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+                btn.innerText = '라이트모드 켜기';
+                isDark = true;
+            } else {
+                document.body.style.backgroundColor = 'white'; 
+                document.body.style.color = 'black';
+                btn.innerText ='다크모드 켜기';
+                isDark = false;
+            };
+        });
+    </script>
+</body>
+</html>

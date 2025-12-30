@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>코드 1-6 : 시맨틱 태그 (Tailwind 버전)</title>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header: 상단 고정 및 중앙 정렬 -->
+    <header class="bg-white border-b border-gray-200 py-6 text-center text-2xl font-bold sticky top-0 z-10 shadow-sm">
+        My Photo Gallery
+    </header>
+
+    <div class="flex flex-col md:flex-row max-w-7xl mx-auto min-h-screen">
+        
+        <!-- Aside: 사이드바 (모바일에서는 가로, 데스크탑에서는 세로) -->
+        <aside class="w-full md:w-64 bg-gray-100 p-6 border-r border-gray-200">
+            <ul class="space-y-4 flex md:block justify-around md:justify-start">
+                <li><a href="#" class="text-blue-600 font-semibold hover:underline">전체 보기</a></li>
+                <li><a href="#" class="text-gray-600 hover:text-blue-500 transition">여행</a></li>
+                <li><a href="#" class="text-gray-600 hover:text-blue-500 transition">음식</a></li>
+                <li><a href="#" class="text-gray-600 hover:text-blue-500 transition">풍경</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main: 메인 콘텐츠 영역 -->
+        <main class="flex-1 p-8">
+            <h2 class="text-xl font-bold mb-6 border-l-4 border-blue-500 pl-3">최신 사진</h2>
+            
+            <!-- Gallery Grid: 반응형 카드 배치 (모바일 1열, 태블릿 2열, 데스크탑 3열) -->
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card Item (반복) -->
+                <div class="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 bg-gray-300 overflow-hidden">
+                        <!-- 이미지 경로가 없을 경우를 대비해 대체 회색 박스 유지 -->
+                        <img src="img1.jpg" alt="사진1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="text-lg font-bold text-gray-900 mb-1">벚꽃 여행</div>
+                        <p class="text-sm text-gray-500">여행 기록</p>
+                    </div>
+                </div>
+
+                <!-- 다른 카드들도 동일한 클래스 적용 -->
+                <div class="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 bg-gray-300 overflow-hidden"><img src="img2.jpg" alt="사진2" class="w-full h-full object-cover"></div>
+                    <div class="p-4"><div class="text-lg font-bold">여름 바다</div><p class="text-sm text-gray-500">해변가 산책</p></div>
+                </div>
+
+                <div class="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 bg-gray-300 overflow-hidden"><img src="img3.jpg" alt="사진3" class="w-full h-full object-cover"></div>
+                    <div class="p-4"><div class="text-lg font-bold">숲속 캠핑</div><p class="text-sm text-gray-500">힐링 타임</p></div>
+                </div>
+
+                <div class="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 bg-gray-300 overflow-hidden"><img src="img1.jpg" alt="사진4" class="w-full h-full object-cover"></div>
+                    <div class="p-4"><div class="text-lg font-bold">가을 단풍</div><p class="text-sm text-gray-500">산행 일지</p></div>
+                </div>
+
+                <div class="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 bg-gray-300 overflow-hidden"><img src="img2.jpg" alt="사진5" class="w-full h-full object-cover"></div>
+                    <div class="p-4"><div class="text-lg font-bold">겨울 눈사람</div><p class="text-sm text-gray-500">동심으로</p></div>
+                </div>
+
+                <div class="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="h-48 bg-gray-300 overflow-hidden"><img src="img3.jpg" alt="사진6" class="w-full h-full object-cover"></div>
+                    <div class="p-4"><div class="text-lg font-bold">노을 맛집</div><p class="text-sm text-gray-500">저녁 식사</p></div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
